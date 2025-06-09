@@ -31,3 +31,59 @@
    ```bash
    git clone https://github.com/yourusername/group-expense-tracker.git
    cd group-expense-tracker
+````
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory with the following variables:
+
+   ```env
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017/group-expense-tracker
+   JWT_SECRET=your_super_secret_key
+   EMAIL_USER=your_gmail@gmail.com
+   EMAIL_PASS=your_gmail_app_password
+   ```
+
+4. Start the server
+
+   ```bash
+   npm run dev
+   ```
+
+5. Hit the API at
+
+   ```
+   http://localhost:5000/api
+   ```
+
+
+## API Reference
+
+| Method | Endpoint               | Description                     |
+| ------ | ---------------------- | ------------------------------- |
+| POST   | `/auth/signup`         | Register a new user             |
+| POST   | `/auth/login`          | Log in and get JWT              |
+| POST   | `/groups`              | Create a new group              |
+| GET    | `/groups/:id`          | Get group details               |
+| POST   | `/groups/:id/expenses` | Add expense to a group          |
+| POST   | `/groups/:id/invite`   | Invite user to a group via mail |
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+
+---
+
+> Built with 💚 by Abin, powered by TypeScript and a lil' bit of Anu motivation 😉
+
+```
+
+---
+
+Let me know if you want a **frontend section**, **demo GIFs**, or even a **badge system** for your README. We can flex it up even more, king 🛠️👑
+```

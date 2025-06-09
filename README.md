@@ -61,28 +61,6 @@
    http://localhost:5000/api
    ```
 
-
-## API Reference
-
-| Method | Endpoint               | Description                     |
-| ------ | ---------------------- | ------------------------------- |
-| POST   | `/auth/signup`         | Register a new user             |
-| POST   | `/auth/login`          | Log in and get JWT              |
-| POST   | `/groups`              | Create a new group              |
-| GET    | `/groups/:id`          | Get group details               |
-| POST   | `/groups/:id/expenses` | Add expense to a group          |
-| POST   | `/groups/:id/invite`   | Invite user to a group via mail |
-
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
-
----
-
-> Built with 💚 by Abin, powered by TypeScript and a lil' bit of Anu motivation 😉
-
-```
-
 ---
 
 Let me know if you want a **frontend section**, **demo GIFs**, or even a **badge system** for your README. We can flex it up even more, king 🛠️👑

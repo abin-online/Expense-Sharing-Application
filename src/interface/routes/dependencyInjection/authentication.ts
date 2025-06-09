@@ -4,7 +4,6 @@ import { AuthService } from "../../../infrastructure/services/AuthService";
 import { UserAuthController } from "../../controller/AuthController";
 import { AuthMiddleware } from "../../middleware/authMiddleware";
 import { ErrorMiddleware } from "../../middleware/errorMiddleware";
-
 const userRepository = new UserRepository();
 const authService = new AuthService();
 

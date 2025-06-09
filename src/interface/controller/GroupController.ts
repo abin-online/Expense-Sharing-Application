@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
 import { IGroupUseCase } from '../../application/Iuse-cases/IGroup';
+import { IEmailService } from '../../domain/IServices/IEmailService';
 
 export class GroupController {
     constructor(
+        private emailService : IEmailService,
         private GroupUseCase: IGroupUseCase,
     ) { }
 
@@ -48,7 +50,14 @@ export class GroupController {
 
       const token = await this.GroupUseCase.inviteUserToGroup(groupId, email, ownerId);
 
-      // You can send token via email later. For now, respond with it.
+      // send token via email later. For now, respond with it.
+            const emailSent = await this.emailService.sendGroupInvite(email, token, groupId);
+
+      if (!emailSent) {
+        return res.status(500).json({ message: 'Invite token generated, but failed to send email' });
+      }
+
+
       res.status(200).json({
         message: 'Invite sent successfully',
         inviteToken: token
@@ -58,7 +67,7 @@ export class GroupController {
     }
   };
 
-  // ✅ Join Group with Invite Token
+
   joinGroup = async (req: Request, res: Response) => {
     try {
       const { inviteToken } = req.body;
